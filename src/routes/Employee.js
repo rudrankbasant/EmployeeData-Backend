@@ -4,13 +4,13 @@ const router = express.Router();
 const Employee = require("../models/Employee");
 
 router.post("/list/", async function(req, res){
-    var allEmployees = await Employee.find({ userid: req.body.userid});
+    var allEmployees = await Employee.find({ id: req.body.id});
     res.json(allEmployees);
 });
 
 router.post("/add", async function(req, res){
 
-    //This line below is to delete the note with the same id so that we can update it and post it again
+    //This line below is to delete the employee with the same id so that we can update it and post it again
     await Employee.deleteOne({ id: req.body.id})
 
     const newEmployee = new Employee({
