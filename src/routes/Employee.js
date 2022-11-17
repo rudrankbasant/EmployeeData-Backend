@@ -3,8 +3,8 @@ const router = express.Router();
 
 const Employee = require("../models/Employee");
 
-router.post("/list/", async function(req, res){
-    var allEmployees = await Employee.find({ id: req.body.id});
+router.get("/list/", async function(req, res){
+    var allEmployees = await Employee.find({});
     res.json(allEmployees);
 });
 
