@@ -14,7 +14,7 @@ const employeeSchema =  mongoose.Schema({
         type: Number,
     },
     phone_number: {
-        type: String,
+        type: Number,
     },
     department: {
         type: String,
